@@ -19,4 +19,10 @@ npx cypress open
 
 [Clique aqui](https://github.com/gabrielalessadev/teste-saucedemo/tree/main/cypress/e2e)
 
+# Casos de teste BDD
+
+[Clique aqui](https://github.com/gabrielalessadev/teste-saucedemo/tree/main/features)
+
+
+
 
