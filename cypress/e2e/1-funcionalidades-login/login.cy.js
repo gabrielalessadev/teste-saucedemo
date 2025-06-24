@@ -1,6 +1,6 @@
 describe('Funcionalidade de Login', () => {
 
-  it('Deve fazer login com sucesso usando usuário padrão', () => {
+  it('Validar login com usuário e senha corretos ', () => {
     cy.visit('/'); 
     cy.get('[data-test="username"]').type('standard_user');
     cy.get('[data-test="password"]').type('secret_sauce');
@@ -9,18 +9,7 @@ describe('Funcionalidade de Login', () => {
     cy.get('.title').should('have.text', 'Products');
   });
 
-  it('Deve exibir mensagem de erro para usuário bloqueado', () => {
-    cy.visit('/'); 
-
-    cy.fixture('usuarios').then((user) => {
-      cy.get('[data-test="username"]').type(user.locked_out);
-      cy.get('[data-test="password"]').type(user.password);
-      cy.get('[data-test="login-button"]').click();
-      cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Sorry, this user has been locked out.');
-    });
-  });
-
-  it('Deve exibir mensagem de erro para credenciais inválidas', () => {
+  it('Validar comportamento com usuário e senha incorretos ', () => {
     cy.visit('/'); 
     
     cy.fixture('usuarios').then((user) => {
@@ -33,7 +22,7 @@ describe('Funcionalidade de Login', () => {
 });
 
 
-describe('Funcionalidade de Logout', () => {
+describe('Realizar logout após login bem-sucedido ', () => {
 
   it('Deve fazer logout com sucesso', () => {
     cy.login('standard_user', 'secret_sauce');

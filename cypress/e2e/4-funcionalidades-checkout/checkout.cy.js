@@ -1,12 +1,11 @@
 describe('Funcionalidade de Checkout', () => {
     beforeEach(() => {
         cy.login('standard_user', 'secret_sauce');
-        // CORREÇÃO: Ajuste o seletor para o ID correto do botão
         cy.get('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click();
         cy.get('.shopping_cart_link').click();
     });
 
-    it('Deve completar o fluxo de checkout com sucesso', () => {
+    it('Validação do processo de checkout', () => {
         cy.get('[data-test="checkout"]').click();
         cy.get('[data-test="firstName"]').type('Gabriel');
         cy.get('[data-test="lastName"]').type('Alessandro');
