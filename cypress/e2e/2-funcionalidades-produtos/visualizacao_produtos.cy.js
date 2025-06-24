@@ -8,7 +8,7 @@ describe('Visualizacao de Produtos', () => {
     cy.get('.inventory_item').should('have.length.greaterThan', 0);
   });
 
-  it('Validar a exibição da lista de produtos após login', () => {
+  it('Visualizar detalhes de um produto', () => {
     cy.get('#item_4_title_link > .inventory_item_name').click();
     cy.get('.inventory_details_name').should('have.text', 'Sauce Labs Backpack');
     cy.get('.inventory_details_price').should('be.visible');
