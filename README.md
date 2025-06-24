@@ -15,3 +15,5 @@ npm run cy:run
 
 npx cypress open
 
+#Funcionalidades [Clique aqui]([https://www.saucedemo.com/v1/](https://github.com/gabrielalessadev/teste-saucedemo/tree/main/cypress/e2e))
+#Casos de teste [Clique aqui]([[https://www.saucedemo.com/v1/](https://github.com/gabrielalessadev/teste-saucedemo/tree/main/cypress/e2e)](https://github.com/gabrielalessadev/teste-saucedemo/tree/main/features))
