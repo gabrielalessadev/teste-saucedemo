@@ -28,6 +28,6 @@ describe('Realizar logout após login bem-sucedido ', () => {
     cy.login('standard_user', 'secret_sauce');
     cy.get('#react-burger-menu-btn').click();
     cy.get('#logout_sidebar_link').click();
-    cy.url().should('eq', 'https://www.saucedemo.com/'); // Verifica se voltou para a página inicial
+    cy.url().should('eq', 'https://www.saucedemo.com/');
   });
 });

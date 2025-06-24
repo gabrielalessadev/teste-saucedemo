@@ -1,18 +1,20 @@
 Funcionalidade: Gerenciamento do Carrinho de Compras
-  Contexto:
-    Dado que eu sou um usuário logado com sucesso na página de produtos
+  Como um cliente da loja
+  Eu quero poder adicionar, remover e verificar itens no meu carrinho
+  Para ter controle sobre a minha compra.
 
-  Cenário: Adicionar um produto ao carrinho e validar
-    Quando eu adiciono o produto "Sauce Labs Backpack" ao carrinho
-    Então o ícone do carrinho deve mostrar o número "1"
+  Cenário: Adicionar produtos ao carrinho
+    Dado que estou na página de produtos
+    Quando eu adiciono um item ao carrinho
+    Então o ícone do carrinho deve ser atualizado para indicar "1" item
 
-  Cenário: Adicionar múltiplos produtos ao carrinho
-    Quando eu adiciono o produto "Sauce Labs Backpack" ao carrinho
-    E eu adiciono o produto "Sauce Labs Bike Light" ao carrinho
-    Então o ícone do carrinho deve mostrar o número "2"
+  Cenário: Remover produtos do carrinho
+    Dado que adicionei um produto ao carrinho
+    E estou na página do carrinho
+    Quando eu removo o produto
+    Então o carrinho deve ser exibido como vazio
 
-  Cenário: Remover um produto do carrinho
-    Dado que eu adicionei um produto ao carrinho
-    Quando eu acesso o carrinho de compras
-    E eu removo o produto do carrinho
-    Então o carrinho de compras deve estar vazio
+  Cenário: Validar que os itens adicionados estão corretos
+    Dado que adicionei um produto específico ao carrinho
+    Quando eu navego para a página do carrinho
+    Então o mesmo produto deve estar listado com o preço e a quantidade corretos
