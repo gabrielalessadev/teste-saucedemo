@@ -1,6 +1,6 @@
 # Projeto de Automação de Testes para Sauce Demo
 
-Este projeto contém uma suíte de testes automatizados de ponta-a-ponta (E2E) para o site de e-commerce de demonstração [Sauce Demo](https://www.saucedemo.com/v1/). O objetivo é validar as funcionalidades críticas da aplicação, desde o login de um usuário até a finalização da compra, utilizando Cypress.
+Avaliar a capacidade do candidato em automatizar casos de uso em sites reais, utilizando ferramentas de testes de interface (UI), aplicando boas práticas de desenvolvimento de testes e documentação, usando Cypress.  [Sauce Demo](https://www.saucedemo.com/v1/). 
 
 ## Funcionalidades Automatizadas
 A suíte de testes cobre as seguintes funcionalidades:
