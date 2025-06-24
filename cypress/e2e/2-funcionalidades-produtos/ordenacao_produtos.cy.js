@@ -3,7 +3,7 @@ describe('Ordenação de Produtos', () => {
     cy.fixture('usuarios').then((user) => {
       cy.login(user.standard, user.password);
     });
-    cy.visit('/inventory.html');
+   
   });
 
   it('Deve ordenar produtos por nome (Z to A)', () => {

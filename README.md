@@ -13,6 +13,8 @@ A suíte de testes cobre as seguintes funcionalidades:
 
 npm run cy:run
 
+npx cypress open
+
 # Cenários de Teste (BDD)
 
 Abaixo estão as especificações de comportamento que guiaram a automação, localizadas na pasta

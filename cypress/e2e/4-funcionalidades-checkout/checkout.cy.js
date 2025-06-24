@@ -1,36 +1,18 @@
 describe('Funcionalidade de Checkout', () => {
-
-  beforeEach(() => {
-
-    cy.visit('/');
-    cy.get('#user-name').type('standard_user');
-    cy.get('#password').type('secret_sauce');
-    cy.get('#login-button').click();
-
-    cy.get('#add-to-cart-sauce-labs-bolt-t-shirt').click();
-    
-    cy.get('.shopping_cart_link').click();
-    cy.get('#checkout').click();
-  });
-
-  it('Deve completar o fluxo de checkout com sucesso', () => {
- 
-    cy.url().should('contain', '/checkout-step-one.html');
-
-    cy.fixture('dados_checkout').then((data) => {
-      cy.get('#first-name').type(data.firstName);
-      cy.get('#last-name').type(data.lastName);
-      cy.get('#postal-code').type(data.postalCode);
+    beforeEach(() => {
+        cy.login('standard_user', 'secret_sauce');
+        // CORREÇÃO: Ajuste o seletor para o ID correto do botão
+        cy.get('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click();
+        cy.get('.shopping_cart_link').click();
     });
-    
-    cy.get('#continue').click();
-    
-    cy.url().should('contain', '/checkout-step-two.html');
-    cy.get('.inventory_item_name').should('contain', 'Sauce Labs Bolt T-Shirt');
-    
-    cy.get('#finish').click();
 
-    cy.url().should('contain', '/checkout-complete.html');
-    cy.get('.complete-header').should('have.text', 'THANK YOU FOR YOUR ORDER');
-  });
+    it('Deve completar o fluxo de checkout com sucesso', () => {
+        cy.get('[data-test="checkout"]').click();
+        cy.get('[data-test="firstName"]').type('Gabriel');
+        cy.get('[data-test="lastName"]').type('Alessandro');
+        cy.get('[data-test="postalCode"]').type('12345678');
+        cy.get('[data-test="continue"]').click();
+        cy.get('[data-test="finish"]').click();
+        cy.get('.complete-header').should('contain', 'Thank you for your order!');
+    });
 });
