@@ -19,6 +19,4 @@ npx cypress open
 
 [Clique aqui](https://github.com/gabrielalessadev/teste-saucedemo/tree/main/cypress/e2e)
 
-# Casos de Teste
 
-[Clique aqui](https://github.com/gabrielalessadev/teste-saucedemo/tree/main/cypress/e2e)
